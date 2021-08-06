@@ -1,3 +1,4 @@
+# Created by Christian Rafael Mora Parga
 import cv2
 import numpy as np
 
@@ -18,13 +19,14 @@ class basicColor:
 
         dimensions = self.image.shape
         tam_mega_pixels = (dimensions[0]*dimensions[1])/10E6
+        #se deja sin ñ y tildes en el output para evitar posibles errores:
         print('Tamano:', dimensions[0], 'x', dimensions[1], '=', tam_mega_pixels, 'MP')
         print('Canales:', dimensions[2])
         return dimensions
 
     def makeBW(self):
         image_gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
-        # Hubral global de Otsu
+        # Umbral global de Otsu
         ret, Ibw_otsu = cv2.threshold(image_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
         #cv2.imshow("Image", Ibw_otsu); cv2.waitKey(0)
         #Retorna la imagen bin:
