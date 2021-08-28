@@ -53,7 +53,7 @@ class thetaFilter:
 
         # intervalos angulares problemáticos:
         a, aa, aaa = 180 - 1 + self.delta_theta, 0 - 1 + self.delta_theta, 360 - 1 + self.delta_theta,
-        b, bb, bbb = 180 - self.delta_theta, 0 - self.delta_theta, 260 - self.delta_theta
+        b, bb, bbb = 180 - self.delta_theta, 0 - self.delta_theta, 360 - self.delta_theta
         # se construye la otra parte del espectro angular reflejando sobre el eje x & y, la parte bien construida
         # si este se encuentra en los intervalos a, aa, aaa, b, bb, bbb, que son todos iguales a 0, 180 y 360 grados
         if self.theta in range(b, a + 1) or self.theta in range(bb, aa + 1) or self.theta in range(bbb, aaa + 1):
