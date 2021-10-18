@@ -17,7 +17,7 @@ if __name__ == '__main__':
     path = sys.argv[1]
 
     # a) Recibir directorio de referencia
-    images_N = os.listdir(path)
+    images_N = sorted(os.listdir(path))
     print(images_N)
     N_images = len(images_N)
     print('El número de imagenes recibidas es: ', str(N_images))
